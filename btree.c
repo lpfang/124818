@@ -2,7 +2,7 @@
 //  btree.c
 //  btree
 //
-//  Created by siqi on 13-11-9.
+//  Created by siqi on 13-11-22.
 //  Copyright (c) 2013年 flp. All rights reserved.
 //
 
@@ -37,3 +37,13 @@ void create(BTREE * T){
     }while (d != -1);
 }
 
+void visit(TElemType data){
+    printf("%d ",data);
+}
+void preOrderTraverse(BTREE T,void(*visit)(TElemType e)){
+    if (T) {
+        visit(T->data);
+        preOrderTraverse(T->lchild,visit);
+        preOrderTraverse(T->rchild,visit);
+    }
+}

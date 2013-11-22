@@ -2,7 +2,7 @@
 //  btree.h
 //  btree
 //
-//  Created by siqi on 13-11-9.
+//  Created by siqi on 13-11-22.
 //  Copyright (c) 2013年 flp. All rights reserved.
 //
 
@@ -18,9 +18,10 @@ typedef struct BTNode{
 
 void insert(BTREE *, BTNode *);
 void create(BTREE* );
-void preOrderTraverse(BTREE);
-void inOrderTraverse(BTREE);
-void postOrderTraverse(BTREE);
+void visit(TElemType);
+void preOrderTraverse(BTREE,void(*)(TElemType));
+void inOrderTraverse(BTREE,void(*)(TElemType));
+void postOrderTraverse(BTREE,void(*)(TElemType));
 int Depth (BTREE);
 void CountLeaf(BTREE, int *);
 
